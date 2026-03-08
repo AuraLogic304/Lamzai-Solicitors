@@ -12,37 +12,57 @@ document.addEventListener('DOMContentLoaded', () => {
     onScroll();
   }
 
-  /* ---------- Mobile nav toggle ---------- */
+  /* ---------- Mobile nav drawer ---------- */
   const toggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  if (toggle && navLinks) {
+  const mobileOverlay = document.getElementById('mobileOverlay');
+
+  if (toggle && mobileOverlay) {
+    const openMenu = () => {
+      mobileOverlay.classList.add('open');
+      mobileOverlay.setAttribute('aria-hidden', 'false');
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+      mobileOverlay.classList.remove('open');
+      mobileOverlay.setAttribute('aria-hidden', 'true');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+
     toggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      toggle.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', open);
+      mobileOverlay.classList.contains('open') ? closeMenu() : openMenu();
     });
 
-    // Close on link click
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        toggle.classList.remove('open');
-        toggle.setAttribute('aria-expanded', false);
-      });
+    // Close button inside panel
+    const closeBtn = mobileOverlay.querySelector('.mob-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    // Close on backdrop click
+    const backdrop = mobileOverlay.querySelector('.mob-backdrop');
+    if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+    // Close on nav link click
+    mobileOverlay.querySelectorAll('.mob-link').forEach(link => {
+      link.addEventListener('click', closeMenu);
     });
 
-    // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (!navbar.contains(e.target)) {
-        navLinks.classList.remove('open');
-        toggle.classList.remove('open');
-      }
+    // Close on CTA click
+    const mobCta = mobileOverlay.querySelector('.mob-cta');
+    if (mobCta) mobCta.addEventListener('click', closeMenu);
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileOverlay.classList.contains('open')) closeMenu();
     });
   }
 
   /* ---------- Active nav link ---------- */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(link => {
+  document.querySelectorAll('.nav-links a, .mob-link').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
