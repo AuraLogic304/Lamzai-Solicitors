@@ -212,14 +212,21 @@ section { padding: 90px 0; }
 
 .nav-logo {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.nav-logo .firm-name {
-  display: flex;
-  align-items: baseline;
-  gap: 0.3rem;
+.nav-logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
+  border-radius: 8px;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.nav-logo:hover .nav-logo-img {
+  opacity: 0.88;
+  transform: scale(1.03);
 }
 
 .firm-primary,
@@ -230,13 +237,6 @@ section { padding: 90px 0; }
   color: var(--white);
   line-height: 1;
   letter-spacing: -0.01em;
-}
-
-.nav-logo .firm-tagline {
-  font-size: 0.65rem;
-  color: var(--gold);
-  letter-spacing: 0.06em;
-  font-family: var(--font-sans);
 }
 
 .nav-end {
@@ -459,16 +459,24 @@ section { padding: 90px 0; }
 }
 
 .hero-card-logo {
-  width: 56px;
-  height: 56px;
-  background: rgba(201, 168, 76, 0.15);
-  border: 1px solid rgba(201, 168, 76, 0.3);
-  border-radius: 50%;
+  width: auto;
+  height: auto;
+  background: var(--white);
+  border: none;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--gold);
   margin: 0 auto 1rem;
+  padding: 6px;
+  box-shadow: 0 2px 12px rgba(201, 168, 76, 0.25);
+}
+
+.hero-logo-img {
+  width: 88px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
 
 .hero-card-title {
@@ -1238,6 +1246,20 @@ section { padding: 90px 0; }
 
 .testimonials-cta { text-align: center; margin-top: 1rem; }
 
+/* Two-card grid variant used on the homepage preview */
+.testimonials-grid--two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.testimonials-grid--two .testimonial-card:last-child {
+  grid-column: auto;
+  max-width: none;
+  margin: 0;
+  width: auto;
+}
+
 /* ===== UTILITY MODIFIERS ===== */
 .section-subtitle--mt { margin-top: 1rem; }
 .section-title--white { color: var(--white); }
@@ -1466,12 +1488,24 @@ section { padding: 90px 0; }
   margin-bottom: 3.5rem;
 }
 
-.footer-brand .firm-name {
-  font-family: var(--font-serif);
-  font-size: 1.45rem;
-  color: var(--white);
-  margin-bottom: 0.3rem;
-  letter-spacing: -0.01em;
+.footer-logo-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.footer-logo-link:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+.footer-logo-img {
+  height: 80px;
+  width: auto;
+  display: block;
+  border-radius: 10px;
 }
 
 .footer-brand .firm-tagline {
@@ -1888,28 +1922,20 @@ section { padding: 90px 0; }
 
   .mob-logo {
     display: flex;
-    flex-direction: column;
-    gap: 3px;
+    align-items: center;
     text-decoration: none;
   }
 
-  .mob-logo-primary {
-    font-family: var(--font-serif);
-    font-size: 1.22rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    line-height: 1;
+  .mob-logo-img {
+    height: 56px;
+    width: auto;
+    display: block;
+    border-radius: 8px;
+    transition: opacity var(--transition);
   }
 
-  .mob-logo-secondary {
-    font-family: var(--font-sans);
-    font-size: 0.53rem;
-    font-weight: 600;
-    color: rgba(201, 168, 76, 0.65);
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
+  .mob-logo:hover .mob-logo-img {
+    opacity: 0.85;
   }
 
   .mob-close {
@@ -2077,6 +2103,8 @@ section { padding: 90px 0; }
   .about-visual { display: none; }
   .testimonials-grid { grid-template-columns: 1fr 1fr; }
   .testimonial-card:last-child { grid-column: 1 / -1; max-width: 480px; margin: 0 auto; width: 100%; }
+  .testimonials-grid--two { grid-template-columns: 1fr 1fr; }
+  .testimonials-grid--two .testimonial-card:last-child { grid-column: auto; max-width: none; margin: 0; width: auto; }
 }
 
 @media (max-width: 900px) {
@@ -2112,6 +2140,9 @@ section { padding: 90px 0; }
   section { padding: 65px 0; }
   .hero { padding: 84px 0 48px; }
 
+  .nav-logo-img { height: 44px; }
+  .footer-logo-img { height: 68px; }
+
   /* Tighten hero element spacing */
   .hero-badge { margin-bottom: 1.25rem; padding: 0.4rem 1rem; font-size: 0.73rem; }
   .hero h1 { margin-bottom: 0.6rem; line-height: 1.18; }
@@ -2135,6 +2166,8 @@ section { padding: 90px 0; }
 }
 
 @media (max-width: 480px) {
+  .nav-logo-img { height: 40px; }
+  .footer-logo-img { height: 60px; }
   .services-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .hero-actions { flex-direction: column; }

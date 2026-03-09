@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖</text></svg>" />
+  <link rel="icon" type="image/png" href="Logo.png" />
+  <link rel="apple-touch-icon" href="Logo.png" />
 </head>
 <body>
 
@@ -21,11 +22,7 @@
     </button>
 
     <a href="index.html" class="nav-logo" aria-label="Lamzai Solicitors Home">
-      <span class="firm-name">
-        <span class="firm-primary">Lamzai</span>
-        <span class="firm-secondary">Solicitors</span>
-      </span>
-      <span class="firm-tagline">Committed Advocacy. Trusted Legal Guidance.</span>
+      <img src="Logo.png" alt="Lamzai Solicitors – Committed Advocacy. Trusted Legal Guidance." class="nav-logo-img" height="52" />
     </a>
 
     <div class="nav-end">
@@ -50,8 +47,7 @@
   <div class="mob-panel">
     <div class="mob-panel-header">
       <a href="index.html" class="mob-logo" aria-label="Lamzai Solicitors Home">
-        <span class="mob-logo-primary">Lamzai</span>
-        <span class="mob-logo-secondary">Solicitors</span>
+        <img src="Logo.png" alt="Lamzai Solicitors" class="mob-logo-img" height="56" />
       </a>
       <button class="mob-close" aria-label="Close navigation menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -257,9 +253,14 @@
     <div class="footer-grid">
 
       <div class="footer-brand">
-        <div class="firm-name">Lamzai Solicitors</div>
+        <a href="index.html" class="footer-logo-link" aria-label="Lamzai Solicitors – Return to homepage">
+          <img src="Logo.png" alt="Lamzai Solicitors" class="footer-logo-img" />
+        </a>
         <div class="firm-tagline">Committed Advocacy. Trusted Legal Guidance.</div>
-        <p>Providing expert legal services to individuals and families across the United Kingdom. Authorised and regulated by the Solicitors Regulation Authority.</p>
+        <p>
+          Providing expert legal services to individuals and families across the United Kingdom.
+          Authorised and regulated by the Solicitors Regulation Authority.
+        </p>
         <div class="footer-sra">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           SRA Number: 8014486
@@ -269,26 +270,43 @@
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="index.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Home</a></li>
-          <li><a href="about.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>About Us</a></li>
-          <li><a href="about.html#team"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Our Team</a></li>
-          <li><a href="blog.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Blog</a></li>
-          <li><a href="testimonials.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Testimonials</a></li>
-          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Practice Areas</a></li>
-          <li><a href="index.html#contact"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Contact Us</a></li>
+          <li><a href="index.html">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            Home
+          </a></li>
+          <li><a href="about.html">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            About Us
+          </a></li>
+          <li><a href="about.html">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            Our Team
+          </a></li>
+          <li><a href="blog.html">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            Blog
+          </a></li>
+          <li><a href="testimonials.html">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            Testimonials
+          </a></li>
+          <li><a href="index.html#contact">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            Contact Us
+          </a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4>Practice Areas</h4>
         <ul>
-          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Debt Advice</a></li>
-          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Commercial Litigation</a></li>
-          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Civil Litigation</a></li>
-          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Asylum &amp; Immigration</a></li>
           <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Family Law</a></li>
           <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Criminal Law</a></li>
+          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Civil Litigation</a></li>
           <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Housing Law</a></li>
+          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Immigration &amp; Asylum</a></li>
+          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Debt Advice</a></li>
+          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Commercial Litigation</a></li>
         </ul>
       </div>
 
@@ -304,11 +322,11 @@
         </div>
         <div class="footer-contact-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:info@lamzaisolicitors.com">info@lamzaisolicitors.com</a>
+          <a href="mailto:enquiries@lamzaisolicitors.co.uk">enquiries@lamzaisolicitors.co.uk</a>
         </div>
         <div class="footer-contact-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>Mon&ndash;Fri: 10:00 AM &ndash; 5:00 PM</span>
+          <span>Mon–Fri: 10:00 AM – 5:00 PM</span>
         </div>
       </div>
 
@@ -325,10 +343,12 @@
   </div>
 </footer>
 
+<!-- Back to top -->
 <button class="back-to-top" aria-label="Back to top">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
 </button>
 
+<!-- Mobile Sticky CTA -->
 <div class="mobile-cta-bar" aria-label="Quick contact bar">
   <a href="tel:02080803737" class="mobile-cta-btn mobile-cta-call">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
