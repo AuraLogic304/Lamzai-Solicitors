@@ -3,79 +3,490 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="About Lamzai Solicitors – our team, values, and commitment to trusted legal guidance across the UK." />
+  <meta name="description" content="About Lamzai Solicitors – Meet our expert legal team and learn about our core values, commitment to clients, and approach to law." />
   <title>About Us | Lamzai Solicitors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖</text></svg>" />
 </head>
 <body>
 
 <!-- ===== NAVBAR ===== -->
-<nav class="navbar scrolled" role="navigation" aria-label="Main navigation">
+<nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <span class="firm-name">Lamzai Solicitors</span>
-      <span class="firm-tagline">Committed Advocacy. Trusted Legal Guidance.</span>
-    </a>
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="index.html#contact">Contact Us</a></li>
-      <li><a href="index.html#contact" class="nav-cta">Free Consultation</a></li>
-    </ul>
+
+    <a href="index.html" class="nav-logo" aria-label="Lamzai Solicitors Home">
+      <span class="firm-name">
+        <span class="firm-primary">Lamzai</span>
+        <span class="firm-secondary">Solicitors</span>
+      </span>
+      <span class="firm-tagline">Committed Advocacy. Trusted Legal Guidance.</span>
+    </a>
+
+    <div class="nav-end">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+      <a href="tel:02080803737" class="nav-phone-btn" aria-label="Call us on 0208 080 3737">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+      </a>
+    </div>
   </div>
 </nav>
 
-<!-- ===== COMING SOON ===== -->
-<main class="coming-soon-page" id="main-content">
-  <div class="coming-soon-content">
-    <div class="coming-soon-icon">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-        <circle cx="9" cy="7" r="4"/>
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-      </svg>
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-overlay" id="mobileOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="mob-backdrop"></div>
+  <div class="mob-panel">
+    <div class="mob-panel-header">
+      <a href="index.html" class="mob-logo" aria-label="Lamzai Solicitors Home">
+        <span class="mob-logo-primary">Lamzai</span>
+        <span class="mob-logo-secondary">Solicitors</span>
+      </a>
+      <button class="mob-close" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
     </div>
-    <span class="page-name">About Us</span>
-    <h1>Coming Soon</h1>
-    <p>
-      We are busy putting together our About Us page, where you will learn more about our
-      dedicated team, our firm's history, values, and the people behind Lamzai Solicitors.
-      Check back soon — or get in touch with us directly in the meantime.
-    </p>
-    <div class="coming-soon-actions">
-      <a href="index.html" class="btn btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        Return to Home
+
+    <nav class="mob-nav" aria-label="Main navigation">
+      <a href="index.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+        <span>Home</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
-      <a href="index.html#contact" class="btn btn-outline">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
-        Book a Free Consultation
+      <a href="about.html" class="mob-link active">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <span>About Us</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       </a>
+      <a href="services.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+        <span>Services</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="testimonials.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <span>Testimonials</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="blog.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+        <span>Blog</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="index.html#contact" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <span>Contact Us</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </nav>
+
+    <div class="mob-footer">
+      <a href="tel:02080803737" class="mob-phone">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+        0208 080 3737
+      </a>
+      <a href="index.html#contact" class="mob-cta">Book a Free Consultation</a>
+      <p class="mob-sra">SRA Regulated &mdash; No. 8014486</p>
     </div>
   </div>
-</main>
+</div>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero" aria-label="About Lamzai Solicitors">
+  <div class="page-hero-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-hero-content reveal">
+      <span class="page-hero-eyebrow">About Us</span>
+      <h1 class="page-hero-heading">WHO WE ARE</h1>
+      <p class="page-hero-tagline">Committed advocacy. Trusted legal guidance.</p>
+      <p class="page-hero-desc">
+        We believe that everyone deserves a fair opportunity to pursue their dreams. Lamzai Solicitors offers a full spectrum of legal services to individuals and families in the United Kingdom, grounded in experience, knowledge, and genuine care for our clients.
+      </p>
+      <p class="page-hero-desc">
+        We understand that legal matters can feel overwhelming, which is why we focus on building lasting relationships and providing clear, thoughtful guidance. Every legal strategy we create is personalized, practical, and designed to support our clients' unique needs and aspirations.
+      </p>
+      <div class="page-hero-actions">
+        <a href="index.html#contact" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Book A Free Consultation
+        </a>
+        <a href="tel:02080803737" class="btn btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          0208 080 3737
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPANY CORE VALUES INTRO ===== -->
+<section class="core-values-intro" aria-label="Company Core Values">
+  <div class="container">
+    <div class="core-values-inner">
+
+      <div class="core-values-text reveal">
+        <span class="section-label">Our Foundation</span>
+        <h2 class="section-title">Company Core Values</h2>
+        <p>
+          At Lamzai Solicitors, we take pride in the important cases we have won. We are a firm built on integrity, excellence, and a genuine passion for justice. Take a moment to get to know more about us, and contact our office for a free case evaluation.
+        </p>
+        <a href="index.html#contact" class="btn btn-outline-navy cv-cta-btn">
+          Request a Free Case Evaluation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="core-values-stats reveal">
+        <div class="cv-stat">
+          <div class="cv-stat-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <strong>SRA Regulated</strong>
+          <span>No. 8014486</span>
+        </div>
+        <div class="cv-stat">
+          <div class="cv-stat-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <strong>Client-Centred</strong>
+          <span>Personalised Service</span>
+        </div>
+        <div class="cv-stat">
+          <div class="cv-stat-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <strong>Free Consultation</strong>
+          <span>First Advice at No Cost</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEET OUR EXPERTS ===== -->
+<section class="team-section" id="team" aria-label="Meet Our Legal Experts">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">Our People</span>
+      <h2 class="section-title">Meet Our Experts</h2>
+      <p class="section-subtitle">
+        Our team of experienced solicitors is dedicated to delivering outstanding results with care and professionalism.
+      </p>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card reveal">
+        <div class="team-avatar-wrap">
+          <div class="team-avatar">JC</div>
+        </div>
+        <div class="team-card-body">
+          <h3 class="team-name">Jane Cooper</h3>
+          <p class="team-role">Divorce Lawyer</p>
+          <p class="team-bio">Specialising in divorce proceedings and matrimonial finance, Jane brings compassion and clarity to every case she handles.</p>
+        </div>
+        <div class="team-social" aria-label="Jane Cooper social links">
+          <a href="#" class="team-social-link" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="team-social-link" aria-label="Twitter">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="team-social-link" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar-wrap">
+          <div class="team-avatar">RF</div>
+        </div>
+        <div class="team-card-body">
+          <h3 class="team-name">Robert Fox</h3>
+          <p class="team-role">Family Lawyer</p>
+          <p class="team-bio">Robert advises on a broad range of family law matters including child arrangements, residence orders, and domestic disputes.</p>
+        </div>
+        <div class="team-social" aria-label="Robert Fox social links">
+          <a href="#" class="team-social-link" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="team-social-link" aria-label="Twitter">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="team-social-link" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar-wrap">
+          <div class="team-avatar">JB</div>
+        </div>
+        <div class="team-card-body">
+          <h3 class="team-name">Jerome Bell</h3>
+          <p class="team-role">Family Lawyer</p>
+          <p class="team-bio">Jerome is committed to protecting the best interests of children and families, offering sensitive and strategic legal advice.</p>
+        </div>
+        <div class="team-social" aria-label="Jerome Bell social links">
+          <a href="#" class="team-social-link" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="team-social-link" aria-label="Twitter">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="team-social-link" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar-wrap">
+          <div class="team-avatar">JJ</div>
+        </div>
+        <div class="team-card-body">
+          <h3 class="team-name">Jacob Jones</h3>
+          <p class="team-role">Criminal Lawyer</p>
+          <p class="team-bio">Jacob provides robust criminal defence representation, ensuring every client receives a thorough and determined defence at every stage.</p>
+        </div>
+        <div class="team-social" aria-label="Jacob Jones social links">
+          <a href="#" class="team-social-link" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="team-social-link" aria-label="Twitter">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="team-social-link" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section class="about-values" id="values" aria-label="Why Choose Lamzai Solicitors">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">Why Choose Us</span>
+      <h2 class="section-title">The Principles We Live By</h2>
+      <p class="section-subtitle">
+        These are not just words on a wall. They are the commitments that guide every decision we make on behalf of our clients.
+      </p>
+    </div>
+
+    <div class="values-grid">
+
+      <div class="value-card reveal">
+        <div class="value-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="value-card-content">
+          <h3 class="value-card-title">Integrity</h3>
+          <p>We respect you as our client and we strive to always provide honest answers — no matter the consequences. At Lamzai Solicitors, if we feel that we cannot help you, we will not take your case.</p>
+        </div>
+      </div>
+
+      <div class="value-card reveal">
+        <div class="value-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="value-card-content">
+          <h3 class="value-card-title">Excellence</h3>
+          <p>Our goal is to exceed your expectations by using our time, gifts, and abilities to serve you. Our team is dedicated to offering competent and excellent legal services, one client at a time.</p>
+        </div>
+      </div>
+
+      <div class="value-card reveal">
+        <div class="value-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="value-card-content">
+          <h3 class="value-card-title">Humility</h3>
+          <p>We are honoured to serve our clients. They are the reason our firm exists, and we will always strive to embrace, and never resent, the opportunity to help those who come to us in need.</p>
+        </div>
+      </div>
+
+      <div class="value-card reveal">
+        <div class="value-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="value-card-content">
+          <h3 class="value-card-title">Passion</h3>
+          <p>Our love for the people we serve flavours everything we do. Every phone call, court date, filing, and interaction is a step on the path to someone's future. We will never forget the power we wield when we complete what might seem like a simple task.</p>
+        </div>
+      </div>
+
+      <div class="value-card reveal">
+        <div class="value-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="value-card-content">
+          <h3 class="value-card-title">Team Players</h3>
+          <p>By sharing work and sharing credit, we turn our individual roles into one momentous, united effort. We climb taller mountains every day because we do so as a team — always looking out for each other and for our clients.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== OUR COMMITMENT ===== -->
+<section class="commitment-section" aria-label="Our Commitment to Clients">
+  <div class="container">
+    <div class="commitment-inner reveal">
+      <div class="commitment-icon" aria-hidden="true">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l9-4 9 4v6c0 5.25-3.75 9.74-9 11-5.25-1.26-9-5.75-9-11V6z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <span class="section-label" style="color:var(--gold);">Our Commitment</span>
+      <h2 class="section-title" style="color:var(--white);">Every Client. Every Case. Our Best.</h2>
+      <p class="commitment-desc">
+        Lamzai Solicitors offers a full spectrum of legal services to individuals and families across the United Kingdom. Every client receives personalised guidance, practical solutions, and empathetic support throughout their legal journey. We are not just your solicitors &mdash; we are your advocates.
+      </p>
+      <div class="commitment-actions">
+        <a href="index.html#contact" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Book A Free Consultation
+        </a>
+        <a href="services.html" class="btn btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          View Our Services
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer" role="contentinfo">
   <div class="container">
-    <div class="footer-bottom" style="border-top:none; padding-top:0; padding-bottom:1.5rem;">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="firm-name">Lamzai Solicitors</div>
+        <div class="firm-tagline">Committed Advocacy. Trusted Legal Guidance.</div>
+        <p>
+          Providing expert legal services to individuals and families across the United Kingdom.
+          Authorised and regulated by the Solicitors Regulation Authority.
+        </p>
+        <div class="footer-sra">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          SRA Number: 8014486
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            Home
+          </a></li>
+          <li><a href="about.html">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            About Us
+          </a></li>
+          <li><a href="about.html#team">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            Our Team
+          </a></li>
+          <li><a href="blog.html">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            Blog
+          </a></li>
+          <li><a href="testimonials.html">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            Testimonials
+          </a></li>
+          <li><a href="services.html">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            Practice Areas
+          </a></li>
+          <li><a href="index.html#contact">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            Contact Us
+          </a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Practice Areas</h4>
+        <ul>
+          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Debt Advice</a></li>
+          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Commercial Litigation</a></li>
+          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Civil Litigation</a></li>
+          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Asylum &amp; Immigration</a></li>
+          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Family Law</a></li>
+          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Criminal Law</a></li>
+          <li><a href="services.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Housing Law</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Jhumat House, 160 London Road, Barking IG11 8BB</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          <a href="tel:02080803737">0208 080 3737</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:info@lamzaisolicitors.com">info@lamzaisolicitors.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Mon&ndash;Fri: 10:00 AM &ndash; 5:00 PM</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
       <p>&copy; 2026 Lamzai Solicitors. All rights reserved. SRA Number: 8014486</p>
       <div class="footer-bottom-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#contact">Contact</a>
-        <a href="services.html">Services</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Policy</a>
       </div>
     </div>
   </div>
 </footer>
+
+<!-- Back to top -->
+<button class="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-cta-bar" aria-label="Quick contact bar">
+  <a href="tel:02080803737" class="mobile-cta-btn mobile-cta-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+    Call Us
+  </a>
+  <a href="index.html#contact" class="mobile-cta-btn mobile-cta-consult">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    Free Consultation
+  </a>
+</div>
 
 <script src="script.js"></script>
 </body>
