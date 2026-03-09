@@ -2510,6 +2510,112 @@ section { padding: 90px 0; }
   box-shadow: 0 4px 10px rgba(201, 168, 76, 0.3);
 }
 
+/* ===== EXPERT PROFILE (SINGLE) ===== */
+.expert-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 3.5rem;
+  margin-top: 3.5rem;
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--light-grey);
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.expert-profile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.expert-photo-wrap {
+  flex-shrink: 0;
+  width: 240px;
+}
+
+.expert-photo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--radius-lg);
+  border: 3px solid rgba(201, 168, 76, 0.3);
+  display: block;
+}
+
+.expert-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.expert-role {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-dark);
+  font-family: var(--font-sans);
+  margin-bottom: 1.25rem;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  border-radius: 100px;
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.expert-bio {
+  font-size: 0.97rem;
+  color: var(--mid-grey);
+  line-height: 1.8;
+  font-family: var(--font-sans);
+  margin-bottom: 1rem;
+}
+
+.expert-bio:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .expert-profile {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .expert-photo-wrap {
+    width: 180px;
+  }
+
+  .expert-photo {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .expert-photo-wrap {
+    width: 150px;
+  }
+
+  .expert-photo {
+    height: 185px;
+  }
+
+  .expert-bio {
+    font-size: 0.92rem;
+  }
+}
+
 /* ===== ABOUT VALUES (WHY CHOOSE US) ===== */
 .about-values {
   background: var(--white);
