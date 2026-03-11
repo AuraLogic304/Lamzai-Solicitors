@@ -192,14 +192,14 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       // Send enquiry email to the firm, then send auto-reply to the client
-      emailjs.send('service_8vnoxfw', 'template_c2jvcjk', templateParams)
+      emailjs.send('service_mwkaa8r', 'template_c2jvcjk', templateParams)
         .then(() => {
           form.style.display = 'none';
           if (successMessage) successMessage.style.display = 'block';
           showToast('Your message has been sent! We will be in touch shortly.');
           form.reset();
           // Send auto-reply to client
-          return emailjs.send('service_8vnoxfw', 'template_o5vu0tt', templateParams);
+          return emailjs.send('service_mwkaa8r', 'template_o5vu0tt', templateParams);
         })
         .then(() => {
           console.log('Auto-reply sent successfully.');
