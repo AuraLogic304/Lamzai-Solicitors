@@ -177,19 +177,36 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Simulate submission
+      // Show loading state
       const submitBtn = form.querySelector('.form-submit');
       const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Sending…';
       submitBtn.disabled = true;
 
-      setTimeout(() => {
-        form.style.display = 'none';
-        if (successMessage) successMessage.style.display = 'block';
-        showToast('Your message has been sent! We will be in touch shortly.');
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-      }, 1600);
+      // Build template parameters
+      const templateParams = {
+        from_name:  form.querySelector('#name').value.trim(),
+        from_email: form.querySelector('#email').value.trim(),
+        phone:      form.querySelector('#phone').value.trim() || 'Not provided',
+        case_type:  form.querySelector('#caseType').value,
+        message:    form.querySelector('#message').value.trim()
+      };
+
+      // Send enquiry email to the firm, then send auto-reply to the client
+      emailjs.send('service_8vnoxfw', 'template_c2jvcjk', templateParams)
+        .then(() => {
+          emailjs.send('service_8vnoxfw', 'template_o5vu0tt', templateParams);
+          form.style.display = 'none';
+          if (successMessage) successMessage.style.display = 'block';
+          showToast('Your message has been sent! We will be in touch shortly.');
+          form.reset();
+        })
+        .catch((error) => {
+          console.error('EmailJS error:', error);
+          showToast('Sorry, something went wrong. Please call us directly.', 'error');
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        });
     });
 
     // Remove red border on input
