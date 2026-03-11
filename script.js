@@ -179,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Show loading state
       const submitBtn = form.querySelector('.form-submit');
-      const originalText = submitBtn.innerHTML;
       submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Sending…';
       submitBtn.disabled = true;
 
@@ -195,17 +194,18 @@ document.addEventListener('DOMContentLoaded', () => {
       // Send enquiry email to the firm, then send auto-reply to the client
       emailjs.send('service_8vnoxfw', 'template_c2jvcjk', templateParams)
         .then(() => {
-          emailjs.send('service_8vnoxfw', 'template_o5vu0tt', templateParams);
           form.style.display = 'none';
           if (successMessage) successMessage.style.display = 'block';
           showToast('Your message has been sent! We will be in touch shortly.');
           form.reset();
+          // Send auto-reply to client
+          return emailjs.send('service_8vnoxfw', 'template_o5vu0tt', templateParams);
+        })
+        .then(() => {
+          console.log('Auto-reply sent successfully.');
         })
         .catch((error) => {
           console.error('EmailJS error:', error);
-          showToast('Sorry, something went wrong. Please call us directly.', 'error');
-          submitBtn.innerHTML = originalText;
-          submitBtn.disabled = false;
         });
     });
 
