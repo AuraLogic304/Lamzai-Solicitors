@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lamzai Solicitors — Letterhead</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0d1f3c;
+      --navy-light: #162d54;
+      --gold:       #c9a84c;
+      --gold-light: #e2c178;
+      --gold-pale:  #f5edd8;
+      --parchment:  #fdfaf4;
+      --white:      #ffffff;
+      --mid-grey:   #6b7280;
+      --dark-grey:  #374151;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans:  'DM Sans', 'Segoe UI', system-ui, sans-serif;
+    }
+
+    html, body {
+      width: 210mm;
+      background: #e5e7eb;
+      font-family: var(--font-sans);
+    }
+
+    /* ─── Page (A4) ─── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--parchment);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ─── Decorative left accent bar ─── */
+    .page::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 5px;
+      background: linear-gradient(180deg, var(--gold) 0%, var(--navy) 60%, var(--gold) 100%);
+    }
+
+    /* ─── Header ─── */
+    .lh-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 22mm 18mm 0 22mm;
+      gap: 20px;
+    }
+
+    .lh-logo-block {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .lh-logo-img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* fallback monogram if image fails */
+    .lh-logo-monogram {
+      width: 60px;
+      height: 60px;
+      background: var(--navy);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--gold);
+      flex-shrink: 0;
+      letter-spacing: -1px;
+    }
+
+    .lh-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .lh-company-name {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .lh-tagline {
+      font-family: var(--font-sans);
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* ─── Contact block (top right) ─── */
+    .lh-contact-block {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-top: 4px;
+    }
+
+    .lh-contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 7px;
+      font-size: 9.5px;
+      color: var(--dark-grey);
+      font-family: var(--font-sans);
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .lh-contact-item svg {
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ─── Gold rule under header ─── */
+    .lh-rule {
+      margin: 10mm 18mm 0 22mm;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 40%, transparent 100%);
+    }
+
+    .lh-rule-thin {
+      margin: 2px 18mm 0 22mm;
+      height: 0.5px;
+      background: linear-gradient(90deg, rgba(201,168,76,0.35) 0%, transparent 80%);
+    }
+
+    /* ─── Date / Reference line ─── */
+    .lh-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 8mm 18mm 0 22mm;
+      font-size: 9.5px;
+      color: var(--mid-grey);
+      font-family: var(--font-sans);
+    }
+
+    .lh-meta-label {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-size: 8px;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .lh-meta-value {
+      font-size: 10px;
+      color: var(--dark-grey);
+      font-weight: 400;
+      min-width: 120px;
+      border-bottom: 0.5px solid var(--gold-light);
+      padding-bottom: 2px;
+    }
+
+    /* ─── Body area ─── */
+    .lh-body {
+      flex: 1;
+      padding: 8mm 18mm 0 22mm;
+    }
+
+    /* addressee block */
+    .lh-addressee {
+      margin-bottom: 8mm;
+    }
+
+    .lh-addressee-placeholder {
+      font-size: 10.5px;
+      color: #c4c9d4;
+      font-style: italic;
+      font-family: var(--font-sans);
+      line-height: 1.8;
+      border-left: 2px solid #e8e4d8;
+      padding-left: 10px;
+    }
+
+    /* salutation */
+    .lh-salutation-placeholder {
+      font-size: 10.5px;
+      color: #c4c9d4;
+      font-style: italic;
+      font-family: var(--font-sans);
+      margin-bottom: 5mm;
+    }
+
+    /* content lines */
+    .lh-content-lines {
+      margin-top: 4mm;
+    }
+
+    .lh-line {
+      height: 0.5px;
+      background: #e2ddd4;
+      margin-bottom: 6.5mm;
+      border-radius: 1px;
+    }
+
+    .lh-line:nth-child(3) { width: 85%; }
+    .lh-line:nth-child(7) { width: 70%; }
+    .lh-line:nth-child(12) { width: 60%; }
+
+    /* ─── Signature area ─── */
+    .lh-signature {
+      padding: 8mm 18mm 0 22mm;
+    }
+
+    .lh-sig-label {
+      font-size: 9px;
+      color: var(--mid-grey);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 500;
+      margin-bottom: 3mm;
+    }
+
+    .lh-sig-line {
+      width: 55mm;
+      height: 0.5px;
+      background: var(--gold);
+      margin-bottom: 2mm;
+    }
+
+    .lh-sig-name-placeholder {
+      font-size: 10px;
+      color: #c4c9d4;
+      font-style: italic;
+    }
+
+    /* ─── Footer ─── */
+    .lh-footer {
+      margin-top: auto;
+      padding: 0 18mm 0 22mm;
+      padding-top: 6mm;
+    }
+
+    .lh-footer-rule {
+      height: 1px;
+      background: linear-gradient(90deg, var(--navy) 0%, var(--gold) 50%, transparent 100%);
+      margin-bottom: 0;
+    }
+
+    .lh-footer-inner {
+      background: var(--navy);
+      padding: 5mm 16px 5mm 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6mm;
+    }
+
+    .lh-footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .lh-footer-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 8px;
+      color: rgba(255,255,255,0.8);
+      font-family: var(--font-sans);
+      font-weight: 400;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    .lh-footer-item svg {
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .lh-footer-divider {
+      width: 0.5px;
+      height: 28px;
+      background: rgba(201,168,76,0.3);
+      flex-shrink: 0;
+    }
+
+    .lh-footer-disclaimer {
+      font-size: 7px;
+      color: rgba(255,255,255,0.45);
+      font-family: var(--font-sans);
+      text-align: center;
+      line-height: 1.5;
+      padding: 0 8px;
+    }
+
+    .lh-footer-branding {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .lh-footer-logo-mini {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: -0.5px;
+    }
+
+    .lh-footer-reg {
+      font-size: 7px;
+      color: rgba(255,255,255,0.5);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+    }
+
+    /* ─── Print styles ─── */
+    @media print {
+      html, body { background: none; margin: 0; padding: 0; }
+      .page { width: 210mm; min-height: 297mm; }
+      @page { size: A4; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="lh-header">
+
+    <!-- Logo + Name -->
+    <div class="lh-logo-block">
+      <img
+        src="Logo.png"
+        alt="Lamzai Solicitors Logo"
+        class="lh-logo-img"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="lh-logo-monogram" style="display:none;">LS</div>
+
+      <div class="lh-brand">
+        <div class="lh-company-name">Lamzai Solicitors</div>
+        <div class="lh-tagline">Expert Legal Advice &amp; Representation</div>
+      </div>
+    </div>
+
+    <!-- Contact details -->
+    <div class="lh-contact-block">
+      <div class="lh-contact-item">
+        <span>0208 080 3737</span>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+      </div>
+      <div class="lh-contact-item">
+        <span>enquiries@lamzaisolicitors.co.uk</span>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div class="lh-contact-item">
+        <span>Jhumat House, 160 London Rd, Barking IG11 8BB</span>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="lh-contact-item">
+        <span>www.lamzaisolicitors.co.uk</span>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Gold rule -->
+  <div class="lh-rule"></div>
+  <div class="lh-rule-thin"></div>
+
+  <!-- ═══ META: Date + Ref ═══ -->
+  <div class="lh-meta">
+    <div>
+      <span class="lh-meta-label">Date</span>
+      <div class="lh-meta-value">&nbsp;</div>
+    </div>
+    <div>
+      <span class="lh-meta-label">Our Ref</span>
+      <div class="lh-meta-value">&nbsp;</div>
+    </div>
+    <div>
+      <span class="lh-meta-label">Your Ref</span>
+      <div class="lh-meta-value">&nbsp;</div>
+    </div>
+  </div>
+
+  <!-- ═══ BODY ═══ -->
+  <div class="lh-body">
+
+    <!-- Addressee -->
+    <div class="lh-addressee" style="margin-top: 8mm;">
+      <div class="lh-addressee-placeholder">
+        Name<br/>
+        Company / Organisation<br/>
+        Address Line 1<br/>
+        Address Line 2<br/>
+        City, Postcode
+      </div>
+    </div>
+
+    <!-- Subject line placeholder -->
+    <div style="margin-bottom: 5mm;">
+      <span class="lh-meta-label">Re:</span>
+      <div class="lh-meta-value" style="width: 100%; max-width: 140mm;">&nbsp;</div>
+    </div>
+
+    <!-- Salutation -->
+    <div class="lh-salutation-placeholder">Dear Sir / Madam,</div>
+
+    <!-- Content lines -->
+    <div class="lh-content-lines">
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+      <div class="lh-line"></div>
+    </div>
+
+  </div>
+
+  <!-- ═══ SIGNATURE ═══ -->
+  <div class="lh-signature">
+    <div class="lh-sig-label">Yours faithfully,</div>
+    <br/>
+    <div class="lh-sig-line"></div>
+    <div class="lh-sig-name-placeholder">Solicitor name &amp; position</div>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <div class="lh-footer">
+    <div class="lh-footer-rule"></div>
+    <div class="lh-footer-inner">
+
+      <!-- Branding -->
+      <div class="lh-footer-branding">
+        <div class="lh-footer-logo-mini">LS</div>
+        <div class="lh-footer-reg">
+          Lamzai Solicitors<br/>
+          Regulated by the SRA
+        </div>
+      </div>
+
+      <div class="lh-footer-divider"></div>
+
+      <!-- Address & phone -->
+      <div class="lh-footer-col">
+        <div class="lh-footer-item">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Jhumat House, 160 London Road, Barking IG11 8BB
+        </div>
+        <div class="lh-footer-item">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          0208 080 3737
+        </div>
+      </div>
+
+      <div class="lh-footer-divider"></div>
+
+      <!-- Email & website -->
+      <div class="lh-footer-col">
+        <div class="lh-footer-item">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          enquiries@lamzaisolicitors.co.uk
+        </div>
+        <div class="lh-footer-item">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          www.lamzaisolicitors.co.uk
+        </div>
+      </div>
+
+      <div class="lh-footer-divider"></div>
+
+      <!-- Disclaimer -->
+      <div class="lh-footer-disclaimer">
+        This communication is confidential and intended solely<br/>
+        for the named recipient(s). Unauthorised use or disclosure<br/>
+        is prohibited. Lamzai Solicitors is authorised and regulated<br/>
+        by the Solicitors Regulation Authority.
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
