@@ -2595,6 +2595,47 @@ section { padding: 90px 0; }
   margin-bottom: 0;
 }
 
+.expert-areas {
+  margin: 1rem 0;
+  font-family: var(--font-sans);
+}
+
+.expert-areas strong {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+.expert-areas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.expert-areas ul li {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gold-dark);
+  font-family: var(--font-sans);
+  padding: 0.3rem 0.75rem;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  border-radius: 100px;
+  background: rgba(201, 168, 76, 0.06);
+}
+
+@media (max-width: 768px) {
+  .expert-areas ul {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 768px) {
   .expert-profile {
     flex-direction: column;
