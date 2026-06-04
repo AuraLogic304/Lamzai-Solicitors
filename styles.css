@@ -422,7 +422,10 @@ section { padding: 90px 0; }
   color: rgba(255,255,255,0.65);
   font-size: 0.83rem;
   font-family: var(--font-sans);
+  text-decoration: none;
 }
+
+a.trust-chip:hover { color: var(--gold); }
 
 .trust-chip svg {
   flex-shrink: 0;
@@ -1537,6 +1540,14 @@ section { padding: 90px 0; }
   padding: 0.45rem 0.9rem;
   border-radius: 100px;
   font-family: var(--font-sans);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a.footer-sra:hover {
+  background: rgba(201, 168, 76, 0.18);
+  border-color: rgba(201, 168, 76, 0.45);
+  color: var(--gold);
 }
 
 .footer-col h4 {
@@ -2076,7 +2087,11 @@ section { padding: 90px 0; }
     color: rgba(255, 255, 255, 0.3);
     letter-spacing: 0.04em;
     margin: 0;
+    text-decoration: none;
+    display: block;
   }
+
+  a.mob-sra:hover { color: rgba(255, 255, 255, 0.55); }
 }
 
 /* ===== RESPONSIVE ===== */
@@ -2309,6 +2324,7 @@ section { padding: 90px 0; }
   border-radius: var(--radius-lg);
   padding: 1.75rem 1.25rem;
   text-align: center;
+  text-decoration: none;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
