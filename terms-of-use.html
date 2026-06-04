@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terms of Use for the Lamzai Solicitors website. Read our acceptable use policy, disclaimer, intellectual property rights, and governing law." />
+  <title>Terms of Use | Lamzai Solicitors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="Logo.png" />
+  <link rel="apple-touch-icon" href="Logo.png" />
+  <style>
+    .policy-page-section {
+      padding: 80px 0 100px;
+    }
+
+    .policy-page-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .policy-page-section { padding: 48px 0 72px; }
+      .policy-page-layout { grid-template-columns: 1fr; }
+      .policy-page-sidebar { display: none; }
+    }
+
+    .policy-block { margin-bottom: 48px; }
+    .policy-block:last-child { margin-bottom: 0; }
+
+    .policy-block h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      color: var(--navy);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold-pale);
+      position: relative;
+    }
+
+    .policy-block h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 48px; height: 2px;
+      background: var(--gold);
+    }
+
+    .policy-block h3 {
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      color: var(--navy);
+      margin-bottom: 10px;
+      margin-top: 26px;
+    }
+
+    .policy-block p {
+      color: var(--dark-grey);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .policy-block p:last-child { margin-bottom: 0; }
+
+    .policy-list {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+    }
+
+    .policy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--dark-grey);
+      line-height: 1.7;
+      padding: 6px 0;
+    }
+
+    .policy-bullet {
+      flex-shrink: 0;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 9px;
+    }
+
+    .policy-intro {
+      background: var(--white);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .policy-intro p { margin-bottom: 10px; font-size: 1.025rem; color: var(--dark-grey); line-height: 1.8; }
+    .policy-intro p:last-child { margin-bottom: 0; }
+
+    .policy-highlight {
+      background: var(--parchment);
+      border: 1px solid var(--gold-pale);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 16px 0;
+    }
+
+    .policy-highlight p { color: var(--dark-grey); line-height: 1.8; margin: 0; font-size: 0.97rem; }
+
+    /* Sidebar */
+    .policy-page-sidebar {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .sidebar-nav-widget {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar-nav-widget h4 {
+      color: var(--navy);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold-pale);
+      position: relative;
+    }
+
+    .sidebar-nav-widget h4::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 32px; height: 2px;
+      background: var(--gold);
+    }
+
+    .sidebar-nav-list { list-style: none; padding: 0; }
+    .sidebar-nav-list li { border-bottom: 1px solid var(--light-grey); }
+    .sidebar-nav-list li:last-child { border-bottom: none; }
+
+    .sidebar-nav-list a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 0;
+      color: var(--dark-grey);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    .sidebar-nav-list a svg { color: var(--gold); flex-shrink: 0; }
+    .sidebar-nav-list a:hover { color: var(--navy); }
+
+    .sidebar-contact-widget {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 24px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .sidebar-contact-widget h4 {
+      color: var(--gold-light);
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .sidebar-contact-widget p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+    }
+
+    .sidebar-contact-widget .btn { width: 100%; justify-content: center; margin-bottom: 10px; }
+
+    .sidebar-contact-widget .sidebar-phone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+
+    .sidebar-contact-widget .sidebar-phone:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="index.html" class="nav-logo" aria-label="Lamzai Solicitors Home">
+      <img src="Logo.png" alt="Lamzai Solicitors – Committed Advocacy. Trusted Legal Guidance." class="nav-logo-img" height="52" />
+    </a>
+    <div class="nav-end">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+      <a href="tel:02080803737" class="nav-phone-btn" aria-label="Call us on 0208 080 3737">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-overlay" id="mobileOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="mob-backdrop"></div>
+  <div class="mob-panel">
+    <div class="mob-panel-header">
+      <a href="index.html" class="mob-logo" aria-label="Lamzai Solicitors Home">
+        <img src="Logo.png" alt="Lamzai Solicitors" class="mob-logo-img" height="56" />
+      </a>
+      <button class="mob-close" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="mob-nav" aria-label="Main navigation">
+      <a href="index.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+        <span>Home</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="about.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <span>About Us</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="services.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+        <span>Services</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="testimonials.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <span>Testimonials</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="blog.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+        <span>Blog</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="index.html#contact" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <span>Contact Us</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </nav>
+    <div class="mob-footer">
+      <a href="tel:02080803737" class="mob-phone">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+        0208 080 3737
+      </a>
+      <a href="index.html#contact" class="mob-cta">Book a Free Consultation</a>
+      <a href="https://www.sra.org.uk/consumers/register/organisation/?sraNumber=8014486&amp;prevSearchText=Lamzai&amp;prevSearchFilter=&amp;shem=rimspwouoe" target="_blank" rel="noopener noreferrer" class="mob-sra">SRA Regulated &mdash; No. 8014486</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE BANNER ===== -->
+<section class="page-banner" aria-label="Terms of Use">
+  <div class="page-banner-overlay" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-banner-inner">
+      <nav class="page-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="page-breadcrumb-sep" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </span>
+        <span>Terms of Use</span>
+      </nav>
+      <h1 class="page-banner-title">TERMS OF USE</h1>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<section class="policy-page-section" aria-label="Terms of Use content">
+  <div class="container">
+    <div class="policy-page-layout">
+
+      <!-- Main content -->
+      <main>
+
+        <div class="policy-intro">
+          <p>These Terms of Use govern your access to and use of the Lamzai Solicitors website at <strong>www.lamzaisolicitors.co.uk</strong> (the &ldquo;Website&rdquo;). By accessing or using the Website, you agree to be bound by these terms. Please read them carefully before using the site.</p>
+          <p>These terms are governed by the law of England and Wales. We may update them from time to time; the current version will always be available on this page.</p>
+          <p><em>Last updated: June 2026.</em></p>
+        </div>
+
+        <!-- 1. About Us -->
+        <div class="policy-block" id="about">
+          <h2>1. About Us</h2>
+          <p>This Website is operated by Lamzai Solicitors, a sole practice authorised and regulated by the Solicitors Regulation Authority (SRA No. 8014486). Our registered office and principal place of business is:</p>
+          <p><strong>Jhumat House, 160 London Road, Barking, Essex IG11 8BB</strong></p>
+          <p>Telephone: <a href="tel:02080803737" style="color:var(--navy);font-weight:500;">0208 080 3737</a> &nbsp;&bull;&nbsp; Email: <a href="mailto:enquiries@lamzaisolicitors.co.uk" style="color:var(--navy);font-weight:500;">enquiries@lamzaisolicitors.co.uk</a></p>
+        </div>
+
+        <!-- 2. Not Legal Advice -->
+        <div class="policy-block" id="not-legal-advice">
+          <h2>2. Website Content Is Not Legal Advice</h2>
+          <div class="policy-highlight">
+            <p><strong>Important:</strong> The information published on this Website is provided for general information purposes only. It does not constitute legal advice and should not be relied upon as such. Legal outcomes depend on the specific facts of each individual situation.</p>
+          </div>
+          <p>Reading, accessing, or downloading content from this Website does not create a solicitor-client relationship between you and Lamzai Solicitors. A formal solicitor-client relationship is only established when we have confirmed our instructions in writing and issued a Client Care Letter.</p>
+          <p>If you require legal advice on a specific matter, please <a href="index.html#contact" style="color:var(--navy);font-weight:500;">contact us</a> to arrange a consultation. We offer a free initial consultation for most matters.</p>
+          <p>Although we take all reasonable steps to ensure the content is accurate and up to date, the law changes frequently. We make no representation or warranty, express or implied, as to the accuracy, completeness, or fitness for purpose of any information on this Website.</p>
+        </div>
+
+        <!-- 3. Acceptable Use -->
+        <div class="policy-block" id="acceptable-use">
+          <h2>3. Acceptable Use</h2>
+          <p>You may use this Website for lawful purposes only. You must not:</p>
+          <ul class="policy-list">
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Use the Website in any way that violates any applicable local, national, or international law or regulation</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Transmit, or procure the sending of, any unsolicited or unauthorised advertising or promotional material (&ldquo;spam&rdquo;)</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Knowingly transmit any data, send or upload any material that contains viruses, Trojan horses, worms, time-bombs, keystroke loggers, spyware, adware, or any other harmful programs or code</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Attempt to gain unauthorised access to any part of the Website or any server, computer, or database connected to the Website</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Engage in any conduct that restricts or inhibits anyone&rsquo;s use or enjoyment of the Website, or which we determine may harm Lamzai Solicitors or other users</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Use automated tools, scrapers, bots, or similar technology to access or extract content from the Website without our written consent</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Impersonate any person or misrepresent your identity or affiliation with any person or organisation</span></li>
+          </ul>
+          <p>We reserve the right to suspend or block access to the Website at our discretion, without notice, where we believe these terms have been breached.</p>
+        </div>
+
+        <!-- 4. Intellectual Property -->
+        <div class="policy-block" id="ip">
+          <h2>4. Intellectual Property</h2>
+          <p>All content on this Website &mdash; including but not limited to text, graphics, logos, images, audio and video clips, data compilations, and software &mdash; is the property of Lamzai Solicitors or its content licensors and is protected by copyright, trade mark, and other intellectual property laws of England and Wales and international treaties.</p>
+          <p>You may:</p>
+          <ul class="policy-list">
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>View and download a single copy of pages for your personal, non-commercial use</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Share links to pages of the Website, provided you do so in a fair and lawful manner</span></li>
+          </ul>
+          <p>You must not:</p>
+          <ul class="policy-list">
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Copy, reproduce, republish, upload, transmit, or distribute any content from this Website for commercial purposes without our prior written consent</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Modify, adapt, or create derivative works based on Website content without our permission</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Remove or alter any copyright, trade mark, or other proprietary notices</span></li>
+          </ul>
+          <p>The Lamzai Solicitors name, logo, and all related marks are trade marks or service marks of Lamzai Solicitors. Nothing on this Website grants any licence to use them without our written consent.</p>
+        </div>
+
+        <!-- 5. Third Party Links -->
+        <div class="policy-block" id="third-party">
+          <h2>5. Third-Party Links</h2>
+          <p>This Website may contain links to third-party websites for your convenience and information. These links do not constitute an endorsement by Lamzai Solicitors of those websites or their content.</p>
+          <p>We have no control over, and accept no responsibility for, the content, privacy practices, or availability of any third-party websites. You access linked websites at your own risk and should read their terms and privacy policies.</p>
+        </div>
+
+        <!-- 6. Limitation of Liability -->
+        <div class="policy-block" id="liability">
+          <h2>6. Limitation of Liability</h2>
+          <div class="policy-highlight">
+            <p>To the fullest extent permitted by law, Lamzai Solicitors and its principals, employees, and agents exclude all liability (whether arising in contract, tort, breach of statutory duty, or otherwise) for any loss or damage, direct or indirect, arising from your use of, or reliance on, the Website or any content on it.</p>
+          </div>
+          <p>This includes, without limitation:</p>
+          <ul class="policy-list">
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Loss of profits, revenue, business, or goodwill</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Loss of anticipated savings or wasted expenditure</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Loss or corruption of data</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Any indirect or consequential loss or damage</span></li>
+          </ul>
+          <p>Nothing in these terms excludes or limits our liability for death or personal injury caused by our negligence, for fraud or fraudulent misrepresentation, or for any other liability that cannot be excluded or limited by law.</p>
+          <p>Our liability to you, where it cannot be excluded, is limited to the maximum extent permitted by English law.</p>
+        </div>
+
+        <!-- 7. Website Availability -->
+        <div class="policy-block" id="availability">
+          <h2>7. Website Availability</h2>
+          <p>We cannot guarantee that the Website will always be available, uninterrupted, or free from errors. We reserve the right to suspend, withdraw, or change the Website at any time and without notice for operational, regulatory, or business reasons.</p>
+          <p>We accept no liability for any loss or inconvenience arising from the unavailability of the Website, howsoever caused.</p>
+        </div>
+
+        <!-- 8. Privacy and Cookies -->
+        <div class="policy-block" id="privacy">
+          <h2>8. Privacy and Cookies</h2>
+          <p>Your use of this Website is also governed by our <a href="privacy-policy.html" style="color:var(--navy);font-weight:500;">Privacy Policy</a> and <a href="cookie-policy.html" style="color:var(--navy);font-weight:500;">Cookie Policy</a>, which are incorporated into these Terms of Use by reference. Please read them carefully.</p>
+        </div>
+
+        <!-- 9. Governing Law -->
+        <div class="policy-block" id="governing-law">
+          <h2>9. Governing Law and Jurisdiction</h2>
+          <p>These Terms of Use and any disputes arising out of or in connection with them (including non-contractual disputes or claims) shall be governed by and construed in accordance with the law of England and Wales.</p>
+          <p>You agree to submit to the exclusive jurisdiction of the courts of England and Wales to resolve any legal dispute arising in connection with these terms or your use of this Website.</p>
+        </div>
+
+        <!-- 10. Amendments -->
+        <div class="policy-block" id="amendments">
+          <h2>10. Amendments</h2>
+          <p>We may revise these Terms of Use at any time by updating this page. Changes take effect when posted. You should check this page periodically to ensure you are aware of any changes, as they are binding on you.</p>
+          <p>Your continued use of the Website after any changes are posted constitutes your acceptance of the revised terms.</p>
+        </div>
+
+        <!-- 11. Contact -->
+        <div class="policy-block" id="contact">
+          <h2>11. Contact Us</h2>
+          <p>If you have any questions about these Terms of Use, please contact us:</p>
+          <ul class="policy-list">
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>By post:</strong> Jhumat House, 160 London Road, Barking, Essex IG11 8BB</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>By phone:</strong> <a href="tel:02080803737" style="color:var(--navy);">0208 080 3737</a></span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>By email:</strong> <a href="mailto:enquiries@lamzaisolicitors.co.uk" style="color:var(--navy);">enquiries@lamzaisolicitors.co.uk</a></span></li>
+          </ul>
+        </div>
+
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="policy-page-sidebar" aria-label="Page navigation">
+
+        <div class="sidebar-nav-widget">
+          <h4>On This Page</h4>
+          <ul class="sidebar-nav-list">
+            <li><a href="#not-legal-advice"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Not Legal Advice</a></li>
+            <li><a href="#acceptable-use"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Acceptable Use</a></li>
+            <li><a href="#ip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Intellectual Property</a></li>
+            <li><a href="#third-party"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Third-Party Links</a></li>
+            <li><a href="#liability"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Limitation of Liability</a></li>
+            <li><a href="#governing-law"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Governing Law</a></li>
+            <li><a href="#contact"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-contact-widget">
+          <h4>Need Legal Advice?</h4>
+          <p>Website content is not legal advice. Contact us for guidance on your specific situation.</p>
+          <a href="index.html#contact" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Free Consultation
+          </a>
+          <a href="tel:02080803737" class="sidebar-phone">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+            0208 080 3737
+          </a>
+        </div>
+
+        <div style="background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);">
+          <h4 style="color:var(--navy);font-size:0.95rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--gold-pale);position:relative;">
+            Related Policies
+            <span style="position:absolute;bottom:-2px;left:0;width:32px;height:2px;background:var(--gold);display:block;"></span>
+          </h4>
+          <ul style="list-style:none;padding:0;display:grid;gap:0.5rem;">
+            <li><a href="privacy-policy.html" style="font-size:0.88rem;color:var(--dark-grey);display:flex;align-items:center;gap:6px;font-weight:500;padding:6px 0;border-bottom:1px solid var(--light-grey);transition:color var(--transition);"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Privacy Policy</a></li>
+            <li><a href="cookie-policy.html" style="font-size:0.88rem;color:var(--dark-grey);display:flex;align-items:center;gap:6px;font-weight:500;padding:6px 0;border-bottom:1px solid var(--light-grey);transition:color var(--transition);"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Cookie Policy</a></li>
+            <li><a href="complaints.html" style="font-size:0.88rem;color:var(--dark-grey);display:flex;align-items:center;gap:6px;font-weight:500;padding:6px 0;transition:color var(--transition);"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Complaints Policy</a></li>
+          </ul>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo-link" aria-label="Lamzai Solicitors – Return to homepage">
+          <img src="Logo.png" alt="Lamzai Solicitors" class="footer-logo-img" />
+        </a>
+        <div class="firm-tagline">Committed Advocacy. Trusted Legal Guidance.</div>
+        <p>
+          Providing expert legal services to individuals and families across the United Kingdom.
+          Authorised and regulated by the Solicitors Regulation Authority.
+        </p>
+        <a href="https://www.sra.org.uk/consumers/register/organisation/?sraNumber=8014486&amp;prevSearchText=Lamzai&amp;prevSearchFilter=&amp;shem=rimspwouoe" target="_blank" rel="noopener noreferrer" class="footer-sra">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          SRA Number: 8014486
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Home</a></li>
+          <li><a href="about.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>About Us</a></li>
+          <li><a href="about.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Our Team</a></li>
+          <li><a href="blog.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Blog</a></li>
+          <li><a href="testimonials.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Testimonials</a></li>
+          <li><a href="index.html#contact"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Contact Us</a></li>
+          <li><a href="complaints.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Complaints Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Practice Areas</h4>
+        <ul>
+          <li><a href="service-family-law.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Family Law</a></li>
+          <li><a href="service-criminal-law.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Criminal Law</a></li>
+          <li><a href="service-civil-litigation.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Civil Litigation</a></li>
+          <li><a href="service-housing-law.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Housing Law</a></li>
+          <li><a href="service-immigration-law.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Immigration &amp; Asylum</a></li>
+          <li><a href="service-debt-advice.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Debt Advice</a></li>
+          <li><a href="service-commercial-litigation.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Commercial Litigation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Jhumat House, 160 London Road, Barking IG11 8BB</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          <a href="tel:02080803737">0208 080 3737</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:enquiries@lamzaisolicitors.co.uk">enquiries@lamzaisolicitors.co.uk</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Mon&ndash;Fri: 10:00 AM &ndash; 5:00 PM</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Lamzai Solicitors. All rights reserved. <a href="https://www.sra.org.uk/consumers/register/organisation/?sraNumber=8014486&amp;prevSearchText=Lamzai&amp;prevSearchFilter=&amp;shem=rimspwouoe" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">SRA Number: 8014486</a></p>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="complaints.html">Complaints Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-cta-bar" aria-label="Quick contact bar">
+  <a href="tel:02080803737" class="mobile-cta-btn mobile-cta-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+    Call Us
+  </a>
+  <a href="index.html#contact" class="mobile-cta-btn mobile-cta-consult">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    Free Consultation
+  </a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

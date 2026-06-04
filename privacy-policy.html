@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy for Lamzai Solicitors. Learn how we collect, use, and protect your personal data in accordance with UK GDPR." />
+  <title>Privacy Policy | Lamzai Solicitors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="Logo.png" />
+  <link rel="apple-touch-icon" href="Logo.png" />
+  <style>
+    .policy-page-section {
+      padding: 80px 0 100px;
+    }
+
+    .policy-page-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .policy-page-section { padding: 48px 0 72px; }
+      .policy-page-layout { grid-template-columns: 1fr; }
+      .policy-page-sidebar { display: none; }
+    }
+
+    .policy-block { margin-bottom: 48px; }
+    .policy-block:last-child { margin-bottom: 0; }
+
+    .policy-block h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      color: var(--navy);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold-pale);
+      position: relative;
+    }
+
+    .policy-block h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 48px; height: 2px;
+      background: var(--gold);
+    }
+
+    .policy-block h3 {
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      color: var(--navy);
+      margin-bottom: 10px;
+      margin-top: 26px;
+    }
+
+    .policy-block p {
+      color: var(--dark-grey);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .policy-block p:last-child { margin-bottom: 0; }
+
+    .policy-list {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+    }
+
+    .policy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--dark-grey);
+      line-height: 1.7;
+      padding: 6px 0;
+    }
+
+    .policy-bullet {
+      flex-shrink: 0;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 9px;
+    }
+
+    .policy-intro {
+      background: var(--white);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .policy-intro p { margin-bottom: 10px; font-size: 1.025rem; color: var(--dark-grey); line-height: 1.8; }
+    .policy-intro p:last-child { margin-bottom: 0; }
+
+    .policy-contact-block {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-top: 16px;
+    }
+
+    .policy-contact-block strong {
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 12px;
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+    }
+
+    .policy-contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .policy-contact-row:last-child { margin-bottom: 0; }
+    .policy-contact-row svg { flex-shrink: 0; margin-top: 3px; opacity: 0.7; }
+    .policy-contact-row a { color: var(--gold-light); word-break: break-all; }
+    .policy-contact-row a:hover { text-decoration: underline; }
+
+    .external-body-block {
+      background: var(--parchment);
+      border: 1px solid var(--gold-pale);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      margin-top: 16px;
+    }
+
+    .external-body-block .body-name {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .external-contact-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+      color: var(--dark-grey);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .external-contact-row:last-child { margin-bottom: 0; }
+    .external-contact-row svg { flex-shrink: 0; margin-top: 3px; color: var(--gold-dark); }
+    .external-contact-row a { color: var(--navy); font-weight: 500; }
+    .external-contact-row a:hover { color: var(--gold-dark); }
+
+    /* Sidebar */
+    .policy-page-sidebar {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .sidebar-nav-widget {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar-nav-widget h4 {
+      color: var(--navy);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold-pale);
+      position: relative;
+    }
+
+    .sidebar-nav-widget h4::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 32px; height: 2px;
+      background: var(--gold);
+    }
+
+    .sidebar-nav-list { list-style: none; padding: 0; }
+
+    .sidebar-nav-list li { border-bottom: 1px solid var(--light-grey); }
+    .sidebar-nav-list li:last-child { border-bottom: none; }
+
+    .sidebar-nav-list a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 0;
+      color: var(--dark-grey);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    .sidebar-nav-list a svg { color: var(--gold); flex-shrink: 0; }
+    .sidebar-nav-list a:hover { color: var(--navy); }
+
+    .sidebar-contact-widget {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 24px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .sidebar-contact-widget h4 {
+      color: var(--gold-light);
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .sidebar-contact-widget p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+    }
+
+    .sidebar-contact-widget .btn { width: 100%; justify-content: center; margin-bottom: 10px; }
+
+    .sidebar-contact-widget .sidebar-phone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+
+    .sidebar-contact-widget .sidebar-phone:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="index.html" class="nav-logo" aria-label="Lamzai Solicitors Home">
+      <img src="Logo.png" alt="Lamzai Solicitors – Committed Advocacy. Trusted Legal Guidance." class="nav-logo-img" height="52" />
+    </a>
+    <div class="nav-end">
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+      <a href="tel:02080803737" class="nav-phone-btn" aria-label="Call us on 0208 080 3737">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-overlay" id="mobileOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="mob-backdrop"></div>
+  <div class="mob-panel">
+    <div class="mob-panel-header">
+      <a href="index.html" class="mob-logo" aria-label="Lamzai Solicitors Home">
+        <img src="Logo.png" alt="Lamzai Solicitors" class="mob-logo-img" height="56" />
+      </a>
+      <button class="mob-close" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="mob-nav" aria-label="Main navigation">
+      <a href="index.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+        <span>Home</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="about.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <span>About Us</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="services.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+        <span>Services</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="testimonials.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <span>Testimonials</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="blog.html" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+        <span>Blog</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="index.html#contact" class="mob-link">
+        <span class="mob-link-icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <span>Contact Us</span>
+        <svg class="mob-link-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </nav>
+    <div class="mob-footer">
+      <a href="tel:02080803737" class="mob-phone">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+        0208 080 3737
+      </a>
+      <a href="index.html#contact" class="mob-cta">Book a Free Consultation</a>
+      <a href="https://www.sra.org.uk/consumers/register/organisation/?sraNumber=8014486&amp;prevSearchText=Lamzai&amp;prevSearchFilter=&amp;shem=rimspwouoe" target="_blank" rel="noopener noreferrer" class="mob-sra">SRA Regulated &mdash; No. 8014486</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PAGE BANNER ===== -->
+<section class="page-banner" aria-label="Privacy Policy">
+  <div class="page-banner-overlay" aria-hidden="true"></div>
+  <div class="container">
+    <div class="page-banner-inner">
+      <nav class="page-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="page-breadcrumb-sep" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </span>
+        <span>Privacy Policy</span>
+      </nav>
+      <h1 class="page-banner-title">PRIVACY POLICY</h1>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAIN CONTENT ===== -->
+<section class="policy-page-section" aria-label="Privacy Policy content">
+  <div class="container">
+    <div class="policy-page-layout">
+
+      <!-- Main content -->
+      <main>
+
+        <div class="policy-intro">
+          <p>This Privacy Policy explains how Lamzai Solicitors (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) collects, uses, and protects your personal data when you visit our website, contact us, or instruct us to act on your behalf.</p>
+          <p>We are committed to protecting your privacy and handling your personal data in an open and transparent manner in accordance with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.</p>
+          <p><em>Last updated: June 2026. We may update this policy from time to time. The current version will always be available on this page.</em></p>
+        </div>
+
+        <!-- 1. Who We Are -->
+        <div class="policy-block" id="controller">
+          <h2>1. Who We Are (Data Controller)</h2>
+          <p>Lamzai Solicitors is the data controller in respect of the personal data we process. We are a sole practice authorised and regulated by the Solicitors Regulation Authority (SRA No. 8014486), practising at:</p>
+          <div class="policy-contact-block" style="margin-top:16px;">
+            <strong>Lamzai Solicitors</strong>
+            <div class="policy-contact-row">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Jhumat House, 160 London Road, Barking, Essex IG11 8BB</span>
+            </div>
+            <div class="policy-contact-row">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+              <span><a href="tel:02080803737">0208 080 3737</a></span>
+            </div>
+            <div class="policy-contact-row">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>Data protection queries: <a href="mailto:enquiries@lamzaisolicitors.co.uk">enquiries@lamzaisolicitors.co.uk</a></span>
+            </div>
+<!--            <div class="policy-contact-row">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Data contact: [DPO/CONTACT NAME]</span>
+            </div> -->
+          </div>
+        </div>
+
+        <!-- 2. Data We Collect -->
+        <div class="policy-block" id="data-collected">
+          <h2>2. Personal Data We Collect</h2>
+          <p>Depending on how you interact with us, we may collect and process the following categories of personal data:</p>
+
+          <h3>Contact and Identity Data</h3>
+          <ul class="policy-list">
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Full name, title, date of birth</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Postal address, email address, telephone number</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Information provided via our contact form or by email, post, or telephone</span></li>
+          </ul>
+
+          <h3>Client and Case Data</h3>
+          <ul class="policy-list">
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Details of your legal matter, instructions, and correspondence</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Identity verification documents (e.g. passport, driving licence, proof of address) as required by our anti-money laundering obligations</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Financial information relevant to your matter (e.g. details of assets, debts, or transactions)</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Special category data where relevant to your case (e.g. health information, immigration status, criminal records)</span></li>
+          </ul>
+
+          <h3>Website Usage Data</h3>
+          <ul class="policy-list">
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>IP address, browser type and version, operating system</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Pages visited, time spent on the site, referring website</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Cookie data (see our <a href="cookie-policy.html" style="color:var(--navy);font-weight:500;">Cookie Policy</a> for details)</span></li>
+          </ul>
+
+          <p>We do not knowingly collect personal data from children under 13 without parental consent.</p>
+        </div>
+
+        <!-- 3. How We Use It -->
+        <div class="policy-block" id="how-used">
+          <h2>3. How We Use Your Personal Data</h2>
+          <p>We use personal data only for specified, lawful purposes. These include:</p>
+          <ul class="policy-list">
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Responding to your enquiries and providing initial advice</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Opening a client file and providing legal services under our retainer</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Complying with our legal and regulatory obligations (including anti-money laundering checks, SRA requirements, and court obligations)</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Sending you updates about your matter and invoicing for our services</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Maintaining our business records and improving our services</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Analysing website usage to improve the performance and content of our website</span></li>
+          </ul>
+          <p>We will never sell your personal data to third parties, nor use it for unsolicited marketing without your consent.</p>
+        </div>
+
+        <!-- 4. Lawful Basis -->
+        <div class="policy-block" id="lawful-basis">
+          <h2>4. Lawful Basis for Processing</h2>
+          <p>Under UK GDPR, we rely on the following lawful bases:</p>
+          <ul class="policy-list">
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Contract:</strong> Processing is necessary to provide legal services under the terms of our client engagement.</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Legal obligation:</strong> Processing is required to comply with our obligations under law (e.g. anti-money laundering regulations, court orders, SRA rules).</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Legitimate interests:</strong> Processing is necessary for our legitimate business interests, such as running our firm, protecting against fraud, and maintaining client records, where these interests are not overridden by your rights.</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Consent:</strong> Where we process special category data (such as health or immigration information) or send optional communications, we will seek your explicit consent.</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Vital interests:</strong> In rare circumstances, we may process data to protect someone&rsquo;s life.</span></li>
+          </ul>
+        </div>
+
+        <!-- 5. Sharing Data -->
+        <div class="policy-block" id="sharing">
+          <h2>5. Sharing Your Personal Data</h2>
+          <p>We may share your data with the following categories of recipients, where necessary and proportionate:</p>
+          <ul class="policy-list">
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Courts, tribunals, and other legal authorities in connection with your matter</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Counsel (barristers), expert witnesses, and other legal professionals instructed on your behalf</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>The Solicitors Regulation Authority (SRA) or other regulatory bodies if required</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>HM Revenue &amp; Customs or the National Crime Agency in connection with our anti-money laundering obligations</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>IT service providers and professional advisers who support our business, all of whom are bound by confidentiality obligations</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span>Opposing parties or their solicitors, to the extent required by your matter</span></li>
+          </ul>
+          <p>We will not share your data with any other third party without your consent, except where required by law.</p>
+        </div>
+
+        <!-- 6. International Transfers -->
+        <div class="policy-block" id="transfers">
+          <h2>6. International Data Transfers</h2>
+          <p>We primarily process and store personal data within the United Kingdom. Where any transfer outside the UK is necessary (for example, if instructing overseas counsel or dealing with an international matter), we will ensure appropriate safeguards are in place, such as the UK International Data Transfer Agreement or equivalent protections.</p>
+        </div>
+
+        <!-- 7. Retention -->
+        <div class="policy-block" id="retention">
+          <h2>7. Data Retention</h2>
+          <p>We retain personal data only for as long as necessary for the purposes for which it was collected, and in accordance with our legal and regulatory obligations. Our standard retention periods are:</p>
+          <ul class="policy-list">
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Client files (general):</strong> 7 years from the conclusion of the matter, in line with the Limitation Act 1980</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Wills, probate, and property matters:</strong> up to 15 years, or as required by applicable law</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Anti-money laundering records:</strong> 5 years from the end of the business relationship</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Enquiries that did not proceed to a matter:</strong> up to 2 years</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Website usage data:</strong> as set out in our Cookie Policy</span></li>
+          </ul>
+          <p>After the relevant retention period, personal data is securely deleted or anonymised.</p>
+        </div>
+
+        <!-- 8. Your Rights -->
+        <div class="policy-block" id="rights">
+          <h2>8. Your Rights Under UK GDPR</h2>
+          <p>You have the following rights in relation to your personal data:</p>
+          <ul class="policy-list">
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Right of access:</strong> You can request a copy of the personal data we hold about you (a &ldquo;Subject Access Request&rdquo;).</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Right to rectification:</strong> You can ask us to correct any inaccurate or incomplete data.</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Right to erasure:</strong> You can ask us to delete your personal data in certain circumstances (&ldquo;right to be forgotten&rdquo;).</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Right to restriction:</strong> You can ask us to restrict how we use your data in certain circumstances.</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Right to data portability:</strong> Where processing is based on consent or contract, you can request your data in a structured, machine-readable format.</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Right to object:</strong> You can object to processing based on legitimate interests or for direct marketing.</span></li>
+            <li><span class="policy-bullet" aria-hidden="true"></span><span><strong>Rights related to automated decision-making:</strong> You have the right not to be subject to solely automated decisions that produce significant effects.</span></li>
+          </ul>
+          <p>Please note that some of these rights are subject to exemptions — for example, we may need to retain data to comply with legal obligations or defend legal claims.</p>
+          <p>To exercise any of these rights, please contact us using the details in Section 1 above. We will respond within one calendar month. There is no charge for making a request, unless it is manifestly unfounded or excessive.</p>
+        </div>
+
+        <!-- 9. ICO -->
+        <div class="policy-block" id="ico">
+          <h2>9. How to Complain</h2>
+          <p>If you are unhappy with how we have handled your personal data, please contact us first so we have the opportunity to resolve your concern. If you remain dissatisfied, you have the right to lodge a complaint with the Information Commissioner&rsquo;s Office (ICO), the UK&rsquo;s data protection supervisory authority.</p>
+
+          <div class="external-body-block">
+            <span class="body-name">Information Commissioner&rsquo;s Office (ICO)</span>
+            <address class="body-address" style="color:var(--dark-grey);font-style:normal;line-height:1.8;margin-bottom:12px;">
+              Wycliffe House<br>
+              Water Lane<br>
+              Wilmslow<br>
+              SK9 5AF
+            </address>
+            <div class="external-contact-row">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+              <span>Helpline: <a href="tel:03031231113">0303 123 1113</a></span>
+            </div>
+            <div class="external-contact-row">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span>Website: <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">ico.org.uk</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Security -->
+        <div class="policy-block" id="security">
+          <h2>10. Data Security</h2>
+          <p>We take appropriate technical and organisational measures to protect your personal data against unauthorised access, loss, or disclosure. These include secure storage of physical files, password-protected and encrypted digital systems, and restricted access on a need-to-know basis.</p>
+          <p>Where we engage third-party service providers, we require them to maintain appropriate security standards and enter into data processing agreements where required.</p>
+          <p>In the unlikely event of a personal data breach that is likely to result in a risk to your rights and freedoms, we will notify you and the ICO as required by law.</p>
+        </div>
+
+        <!-- 11. Third Party Links -->
+        <div class="policy-block" id="third-party">
+          <h2>11. Third-Party Links</h2>
+          <p>Our website may contain links to third-party websites. We have no responsibility or control over the privacy practices of those sites and encourage you to read their privacy policies before providing any personal data.</p>
+        </div>
+
+        <!-- 12. Changes -->
+        <div class="policy-block" id="changes">
+          <h2>12. Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time. Any changes will be published on this page with an updated &ldquo;last updated&rdquo; date. Where changes are material, we will take reasonable steps to bring them to your attention.</p>
+        </div>
+
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="policy-page-sidebar" aria-label="Page navigation">
+
+        <div class="sidebar-nav-widget">
+          <h4>On This Page</h4>
+          <ul class="sidebar-nav-list">
+            <li><a href="#controller"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Who We Are</a></li>
+            <li><a href="#data-collected"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Data We Collect</a></li>
+            <li><a href="#how-used"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>How We Use It</a></li>
+            <li><a href="#lawful-basis"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Lawful Basis</a></li>
+            <li><a href="#sharing"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Sharing Data</a></li>
+            <li><a href="#retention"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Retention</a></li>
+            <li><a href="#rights"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Your Rights</a></li>
+            <li><a href="#ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>How to Complain</a></li>
+            <li><a href="#security"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Data Security</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-contact-widget">
+          <h4>Data Queries?</h4>
+          <p>To exercise your rights or raise a data concern, contact us directly.</p>
+          <a href="index.html#contact" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Get in Touch
+          </a>
+          <a href="tel:02080803737" class="sidebar-phone">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+            0208 080 3737
+          </a>
+        </div>
+
+        <div style="background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);">
+          <h4 style="color:var(--navy);font-size:0.95rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--gold-pale);position:relative;">
+            Related Policies
+            <span style="position:absolute;bottom:-2px;left:0;width:32px;height:2px;background:var(--gold);display:block;"></span>
+          </h4>
+          <ul style="list-style:none;padding:0;display:grid;gap:0.5rem;">
+            <li><a href="cookie-policy.html" style="font-size:0.88rem;color:var(--dark-grey);display:flex;align-items:center;gap:6px;font-weight:500;padding:6px 0;border-bottom:1px solid var(--light-grey);transition:color var(--transition);"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Cookie Policy</a></li>
+            <li><a href="terms-of-use.html" style="font-size:0.88rem;color:var(--dark-grey);display:flex;align-items:center;gap:6px;font-weight:500;padding:6px 0;border-bottom:1px solid var(--light-grey);transition:color var(--transition);"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Terms of Use</a></li>
+            <li><a href="complaints.html" style="font-size:0.88rem;color:var(--dark-grey);display:flex;align-items:center;gap:6px;font-weight:500;padding:6px 0;transition:color var(--transition);"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Complaints Policy</a></li>
+          </ul>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo-link" aria-label="Lamzai Solicitors – Return to homepage">
+          <img src="Logo.png" alt="Lamzai Solicitors" class="footer-logo-img" />
+        </a>
+        <div class="firm-tagline">Committed Advocacy. Trusted Legal Guidance.</div>
+        <p>
+          Providing expert legal services to individuals and families across the United Kingdom.
+          Authorised and regulated by the Solicitors Regulation Authority.
+        </p>
+        <a href="https://www.sra.org.uk/consumers/register/organisation/?sraNumber=8014486&amp;prevSearchText=Lamzai&amp;prevSearchFilter=&amp;shem=rimspwouoe" target="_blank" rel="noopener noreferrer" class="footer-sra">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          SRA Number: 8014486
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Home</a></li>
+          <li><a href="about.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>About Us</a></li>
+          <li><a href="about.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Our Team</a></li>
+          <li><a href="blog.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Blog</a></li>
+          <li><a href="testimonials.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Testimonials</a></li>
+          <li><a href="index.html#contact"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Contact Us</a></li>
+          <li><a href="complaints.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Complaints Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Practice Areas</h4>
+        <ul>
+          <li><a href="service-family-law.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Family Law</a></li>
+          <li><a href="service-criminal-law.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Criminal Law</a></li>
+          <li><a href="service-civil-litigation.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Civil Litigation</a></li>
+          <li><a href="service-housing-law.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Housing Law</a></li>
+          <li><a href="service-immigration-law.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Immigration &amp; Asylum</a></li>
+          <li><a href="service-debt-advice.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Debt Advice</a></li>
+          <li><a href="service-commercial-litigation.html"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>Commercial Litigation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Jhumat House, 160 London Road, Barking IG11 8BB</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          <a href="tel:02080803737">0208 080 3737</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:enquiries@lamzaisolicitors.co.uk">enquiries@lamzaisolicitors.co.uk</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Mon&ndash;Fri: 10:00 AM &ndash; 5:00 PM</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Lamzai Solicitors. All rights reserved. <a href="https://www.sra.org.uk/consumers/register/organisation/?sraNumber=8014486&amp;prevSearchText=Lamzai&amp;prevSearchFilter=&amp;shem=rimspwouoe" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">SRA Number: 8014486</a></p>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="complaints.html">Complaints Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-cta-bar" aria-label="Quick contact bar">
+  <a href="tel:02080803737" class="mobile-cta-btn mobile-cta-call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+    Call Us
+  </a>
+  <a href="index.html#contact" class="mobile-cta-btn mobile-cta-consult">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    Free Consultation
+  </a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
