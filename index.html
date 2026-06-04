@@ -11,8 +11,10 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="Logo.png" />
   <link rel="apple-touch-icon" href="Logo.png" />
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- EmailJS SDK – pinned to 4.4.1 with SRI hash -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js"
+          integrity="sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS"
+          crossorigin="anonymous"></script>
   <script>emailjs.init('NITAbr_1Idlpn8ks0');</script>
 </head>
 <body>
@@ -686,18 +688,18 @@
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name <span>*</span></label>
-              <input type="text" id="name" name="name" placeholder="Your full name" required />
+              <input type="text" id="name" name="name" placeholder="Your full name" required maxlength="100" autocomplete="name" />
             </div>
             <div class="form-group">
               <label for="email">Email Address <span>*</span></label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              <input type="email" id="email" name="email" placeholder="you@example.com" required maxlength="254" autocomplete="email" />
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="e.g. 0208 000 0000" />
+              <input type="tel" id="phone" name="phone" placeholder="e.g. 0208 000 0000" maxlength="30" autocomplete="tel" />
             </div>
             <div class="form-group">
               <label for="caseType">Case Type <span>*</span></label>
@@ -717,7 +719,13 @@
 
           <div class="form-group">
             <label for="message">Case Description <span>*</span></label>
-            <textarea id="message" name="message" placeholder="Please briefly describe your legal matter…" required></textarea>
+            <textarea id="message" name="message" placeholder="Please briefly describe your legal matter…" required maxlength="5000"></textarea>
+          </div>
+
+          <!-- Honeypot – hidden from real users; bots tend to fill it -->
+          <div style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+            <label for="hp_field">Leave this blank</label>
+            <input type="text" id="hp_field" name="hp_field" tabindex="-1" autocomplete="off" />
           </div>
 
           <button type="submit" class="btn btn-primary form-submit">

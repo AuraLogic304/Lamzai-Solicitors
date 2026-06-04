@@ -148,11 +148,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactForm');
   if (form) {
     const successMessage = document.getElementById('formSuccess');
+    let lastSubmitTime = 0;
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      // Basic validation
+      // Honeypot check – bots fill hidden fields, real users don't
+      const honeypot = form.querySelector('#hp_field');
+      if (honeypot && honeypot.value.trim() !== '') return;
+
+      // Rate limit: 60 seconds between submissions
+      const now = Date.now();
+      if (now - lastSubmitTime < 60000) {
+        showToast('Please wait a moment before sending another message.', 'error');
+        return;
+      }
+
+      // Required field validation
       const required = form.querySelectorAll('[required]');
       let valid = true;
       required.forEach(field => {
@@ -163,17 +175,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
+      if (!valid) {
+        showToast('Please fill in all required fields.', 'error');
+        return;
+      }
+
       // Email format check
       const emailField = form.querySelector('#email');
-      if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+      if (emailField && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value.trim())) {
         emailField.style.borderColor = '#e53e3e';
-        valid = false;
         showToast('Please enter a valid email address.', 'error');
         return;
       }
 
-      if (!valid) {
-        showToast('Please fill in all required fields.', 'error');
+      // Phone format check (if provided)
+      const phoneField = form.querySelector('#phone');
+      if (phoneField && phoneField.value.trim() && !/^[\d\s\+\-\(\)]{7,30}$/.test(phoneField.value.trim())) {
+        phoneField.style.borderColor = '#e53e3e';
+        showToast('Please enter a valid phone number.', 'error');
         return;
       }
 
@@ -182,30 +201,30 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Sending…';
       submitBtn.disabled = true;
 
-      // Build template parameters
+      // Build template parameters – values are trimmed, length-capped by maxlength in HTML
       const templateParams = {
         from_name:  form.querySelector('#name').value.trim(),
-        from_email: form.querySelector('#email').value.trim(),
-        phone:      form.querySelector('#phone').value.trim() || 'Not provided',
+        from_email: emailField.value.trim(),
+        phone:      (phoneField && phoneField.value.trim()) || 'Not provided',
         case_type:  form.querySelector('#caseType').value,
         message:    form.querySelector('#message').value.trim()
       };
 
-      // Send enquiry email to the firm, then send auto-reply to the client
+      // Send enquiry email to the firm, then auto-reply to the client
       emailjs.send('service_mwkaa8r', 'template_c2jvcjk', templateParams)
         .then(() => {
+          lastSubmitTime = Date.now();
           form.style.display = 'none';
           if (successMessage) successMessage.style.display = 'block';
           showToast('Your message has been sent! We will be in touch shortly.');
           form.reset();
-          // Send auto-reply to client
           return emailjs.send('service_mwkaa8r', 'template_o5vu0tt', templateParams);
         })
-        .then(() => {
-          console.log('Auto-reply sent successfully.');
-        })
         .catch((error) => {
-          console.error('EmailJS error:', error);
+          submitBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Your Enquiry';
+          submitBtn.disabled = false;
+          showToast('Sorry, there was a problem sending your message. Please try again or call us.', 'error');
+          console.error('Form submission error:', error);
         });
     });
 
@@ -223,13 +242,19 @@ document.addEventListener('DOMContentLoaded', () => {
       toast.className = 'toast';
       document.body.appendChild(toast);
     }
-    const icon = type === 'error'
+
+    // Build toast with safe DOM construction – icon is hardcoded SVG, message uses textContent
+    const iconSvg = type === 'error'
       ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e53e3e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`
       : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38a169" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
 
-    toast.innerHTML = icon + message;
-    if (type === 'error') toast.style.borderLeftColor = '#e53e3e';
-    else toast.style.borderLeftColor = 'var(--gold)';
+    const iconEl = document.createElement('span');
+    iconEl.innerHTML = iconSvg; // safe – hardcoded constant, never user input
+    const msgEl = document.createElement('span');
+    msgEl.textContent = message; // safe – textContent never executes HTML
+
+    toast.replaceChildren(iconEl, msgEl);
+    toast.style.borderLeftColor = type === 'error' ? '#e53e3e' : 'var(--gold)';
 
     requestAnimationFrame(() => {
       toast.classList.add('show');
