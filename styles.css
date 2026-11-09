@@ -4259,3 +4259,15 @@ a.footer-sra:hover {
   max-width: 100%;
   margin-top: 0.6rem;
 }
+
+/* === TEAM PROFILE CREDENTIALS (post-nominals under name) === */
+.expert-credentials {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gold-dark);
+  margin-top: 0.2rem;
+  margin-bottom: 0;
+}
